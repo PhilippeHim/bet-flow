@@ -1,6 +1,16 @@
-<p>featured-match works!</p>
+<!-- Affichage des matchs -->
+<div *ngFor="let match of featuredMatches" class="featured-match">
+  <p><strong>{{ match.teamA }}</strong> vs <strong>{{ match.teamB }}</strong></p>
+  <button (click)="ouvrirModal(match)">Parier maintenant</button>
+</div>
 
-<div *ngFor="let match of featuredMatches">
-    <p>{{ match.teamA }} vs {{ match.teamB }}</p>
-    <button>Parier maintenant</button>
-    </div>
+<!-- Modal de pari -->
+<app-modal-pari
+  *ngIf="showModal && selectedMatch"
+  [teamA]="selectedMatch.teamA"
+  [teamB]="selectedMatch.teamB"
+  [visible]="showModal"
+  (close)="showModal = false"
+  (submitBet)="traiterPari($event)"
+></app-modal-pari>
+

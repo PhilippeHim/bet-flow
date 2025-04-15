@@ -1,0 +1,20 @@
+<div class="modal" *ngIf="visible">
+    <div class="modal-content">
+      <h2>Faire un pari</h2>
+  
+      <label>Choisis ton équipe :</label><br />
+      <label><input type="radio" [(ngModel)]="selectedTeam" [value]="teamA" /> {{ teamA }}</label><br />
+      <label><input type="radio" [(ngModel)]="selectedTeam" [value]="teamB" /> {{ teamB }}</label>
+  
+      <div class="form-group">
+        <label for="amount">Montant (€) :</label>
+        <input type="number" id="amount" [(ngModel)]="betAmount" min="1" />
+      </div>
+  
+      <div class="buttons">
+        <button (click)="envoyerPari()">Parier</button>
+        <button (click)="close.emit()">Annuler</button>
+      </div>
+    </div>
+  </div>
+  

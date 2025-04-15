@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { FeaturedMatchComponent } from "../../components/featured-match/featured-match.component";
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FeaturedMatchComponent } from '../../components/featured-match/featured-match.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FeaturedMatchComponent],
+  standalone: true,
+  imports: [CommonModule, RouterLink, FeaturedMatchComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

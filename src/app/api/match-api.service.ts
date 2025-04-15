@@ -23,4 +23,8 @@ export class MatchApiService {
     const selectedMatches = this.mockMatches.slice(0, limit);
     return of(selectedMatches);
   }
+  getAllMatches(): Observable<Match[]> {
+    return of(this.mockMatches);
+  }
+  
 }

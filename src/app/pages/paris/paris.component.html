@@ -1,1 +1,29 @@
-<p>paris works!</p>
+<h2>Matchs en vedette</h2>
+<div *ngFor="let match of featuredMatches" class="featured-match">
+  <p><strong>{{ match.teamA }}</strong> vs <strong>{{ match.teamB }}</strong></p>
+  <button (click)="ouvrirModal(match)">Parier</button>
+</div>
+
+<h2>Tous les matchs</h2>
+<div *ngFor="let match of allMatches" class="match">
+  <p>{{ match.teamA }} vs {{ match.teamB }}</p>
+  <button (click)="ouvrirModal(match)">Parier</button>
+</div>
+
+<app-modal-pari
+  *ngIf="showModal && selectedMatch"
+  [teamA]="selectedMatch.teamA"
+  [teamB]="selectedMatch.teamB"
+  [visible]="showModal"
+  (close)="showModal = false"
+  (submitBet)="enregistrerPari($event)"
+></app-modal-pari>
+
+<h2>Paris réalisés</h2>
+<ul>
+  <li *ngFor="let pari of paris">
+    <strong>{{ pari.match.teamA }} vs {{ pari.match.teamB }}</strong> → {{ pari.team }} ({{ pari.amount }} €)
+  </li>
+</ul>
+
+<p><strong>Montant total parié :</strong> {{ montantTotalParie }} €</p>
