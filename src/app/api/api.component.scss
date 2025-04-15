@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #fff3e0;
+    border-bottom: 2px solid #ff5722;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: #ff5722;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    transition: color 0.3s;
+  }
+  
+  a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ff5722;
+  }
+  
+  .connexion-btn {
+    margin-left: auto;
+    padding: 8px 14px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .connexion-btn:hover {
+    background-color: #e64a19;
+  }
+  
